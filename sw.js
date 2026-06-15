@@ -2,7 +2,7 @@
    Alatiphy — Service Worker
    ─────────────────────────────────────────────────
    HOW TO UPDATE:
-   Bump APP_VERSION on every release (e.g. "1.0.1").
+   Bump APP_VERSION on every release (e.g. "1.0").
    The cache name updates automatically. Users will
    get a "New version available" prompt on next visit.
 ===================================================== */
