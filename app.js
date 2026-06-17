@@ -348,7 +348,7 @@ lastVolume: parseFloat(localStorage.getItem("volume")) || 1,
 
 /* ====== DURATION_KEY - Change if songs change ====== */
 
-const DURATION_KEY = "alatiphy_beta_durations_v1";
+const DURATION_KEY = "alatiphy_durations_v1";
 
 try {
   const cached = JSON.parse(localStorage.getItem(DURATION_KEY));
@@ -2007,7 +2007,7 @@ updateShuffleButton();
 
 if ("serviceWorker" in navigator) {
 
-  navigator.serviceWorker.register("./sw-beta.js")
+  navigator.serviceWorker.register("./sw.js")
     .then((registration) => {
 
       console.log("Service Worker registered");
