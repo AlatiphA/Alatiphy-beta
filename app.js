@@ -247,43 +247,43 @@ const songs = [
 {
    title: "No Be Pawn - AlatiphA", 
    src: "https://archive.org/download/no-be-pawn-remix-alatiph-a-mp-3-160-k/No%20Be%20Pawn%20-%20AlatiphA%28MP3_160K%29.mp3", 
-   tags: ["rap", "recentlyadded"]
+   tags: ["rap"]
 }, 
 
 { 
    title: "Wins Only (Reset On Course) (Rap) - AlatiphA", 
    src: "https://archive.org/download/wins-only-reset-on-course-rap-alatiph-a/Wins%20Only%20%28Reset%20On%20Course%29%20%28Rap%29%20-%20AlatiphA.mp3", 
-   tags: ["rap", "recentlyadded"]
+   tags: ["rap"]
 },
 
 { 
    title: "Galamsey Tears & Church Power (Rap) - AlatiphA", 
    src: "https://archive.org/download/wins-only-reset-on-course-rap-alatiph-a/Galamsey%20Tears%20%26%20Church%20Power%20%28Rap%29%20-%20AlatiphA.mp3", 
-   tags: ["rap", "recentlyadded"]
+   tags: ["rap"]
 },
 
 { 
    title: "Aku Deception (Rap) - AlatiphA", 
    src: "https://archive.org/download/wins-only-reset-on-course-rap-alatiph-a/Aku%20Deception%20%28Rap%29%20-%20AlatiphA.mp3", 
-   tags: ["rap", "recentlyadded"]
+   tags: ["rap"]
 }, 
 
 { 
    title: "1 Job_ 3 Shifts... Now Hustle - AlatiphA", 
    src: "https://archive.org/download/too-big-for-their-games-alatiph-a-ai-mp-3-160-k/1%20Job_%203%20Shifts...%20Now%20Hustle%28MP3_160K%29.mp3", 
-   tags: ["rap", "recentlyadded"]
+   tags: ["rap"]
 },
 
 { 
    title: "Weatherproof Lies (Remix) - AlatiphA", 
    src: "https://archive.org/download/too-big-for-their-games-alatiph-a-ai-mp-3-160-k/Weatherproof%20Lies%20%28Remix%29%20-%20AlatiphA%20AI.mp3", 
-   tags: ["remix", "recentlyadded"]
+   tags: ["remix"]
 },
 
 { 
    title: "Today is yours, Mama (Afrobeat) - AlatiphA", 
    src: "https://archive.org/download/today-is-yours-mama-remix-alatiph-a/Today%20is%20yours%2C%20Mama%20%28Afrobeat%29%20-%20AlatiphA.mp3", 
-   tags: ["rap", "afrobeats", "recentlyadded"]
+   tags: ["rap", "afrobeats"]
 },
 
 { 
@@ -350,9 +350,27 @@ const songs = [
    title: "Unholy Alliance - AlatiphA", 
    src: "https://archive.org/download/beyond-the-headlines-nyaba-diaries-alatiph-a_202606/Unholy%20Alliance%20-%20AlatiphA.mp3", 
    tags: ["rap", "recentlyadded"]
+}, 
+
+{ 
+   title: "Stupid - AlatiphA", 
+   src: "https://archive.org/download/tears-in-the-rain-alatiph-a-mp-3-160-k/Stupid%20-%20AlatiphA%28MP3_160K%29.mp3", 
+   tags: ["rap", "recentlyadded"]
+},
+
+{ 
+   title: "Tears in the Rain - AlatiphA", 
+   src: "https://archive.org/download/tears-in-the-rain-alatiph-a-mp-3-160-k/Tears%20in%20the%20Rain%20-%20AlatiphA%28MP3_160K%29.mp3", 
+   tags: ["rnb", "recentlyadded"]
+},  
+
+{
+   title: "The Elite - AlatiphA", 
+   src: "https://archive.org/download/the-elite-alatiph-a-mp-3-160-k/The%20Elite%20-%20AlatiphA%28MP3_160K%29.mp3", 
+   tags: ["rap", "recentlyadded"]
 }
 
-  ];
+];
 
 
 
