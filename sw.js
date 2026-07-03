@@ -8,7 +8,7 @@
 ===================================================== */
 
 const APP_VERSION = "v5.6";
-const SONG_CACHE = "v1.0";
+const SONG_CACHE = "v1.1";
 
 const SONG_CACHE = `alatiphy-beta-pwa-${APP_VERSION}`;
 const SONG_CACHE = `alatiphy-songs-pwa-${SONG_CACHE}`;
