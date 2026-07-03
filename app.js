@@ -408,7 +408,7 @@ lastVolume: parseFloat(localStorage.getItem("volume")) || 1,
 
 /* ====== DURATION_KEY - Change if songs change ====== */
 
-const DURATION_KEY = "alatiphy_beta_durations_v1";
+const DURATION_KEY = "alatiphy_beta_durations_v2";
 
 try {
   const cached = JSON.parse(localStorage.getItem(DURATION_KEY));
