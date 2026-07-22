@@ -818,8 +818,9 @@ async function silentCacheSong(song) {
 
     await loadDownloadedSongsMap();
 
-    // refresh download indicator in list silently
+    // refresh download indicator then re-apply highlight
     renderList(DOM.search.value);
+    highlightActiveTrack();
 
     console.log("Auto-cached:", song.title);
 
