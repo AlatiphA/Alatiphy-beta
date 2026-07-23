@@ -49,11 +49,10 @@ A progressive web app (PWA) music player for streaming and offline listening to 
 - Ignores swipes on interactive controls (seek bar, volume, buttons)
 
 ### Downloads & Offline
-- Download any track to the device via the `⋮` player menu
-- Downloads stored in **IndexedDB** — survive app restarts and offline use
-- Downloaded tracks play from local storage, bypassing the network
-- Downloaded songs marked with a `⬇` indicator in the list
-- **Downloads view** in the sidebar shows all locally saved tracks
+- **Auto-cache** — every song you play while online is silently saved to IndexedDB in the background, so it plays offline next time — no action needed
+- **Download** — tap Download in the `⋮` player menu to explicitly save a song; this also saves a real `.mp3` file to your device's Downloads folder
+- Only explicit downloads show the `⬇` indicator and appear in the **Downloads view** — auto-cached songs stay invisible in the UI
+- Both auto-cached and downloaded songs play from local storage when offline, bypassing the network
 
 ### Share
 - Share button in the `⋮` player menu
@@ -74,7 +73,9 @@ A progressive web app (PWA) music player for streaming and offline listening to 
 - About section pinned at the bottom of the sidebar with app icon, version, and developer credit
 
 ### Theme
-- Automatically adapts to **light and dark mode** via `prefers-color-scheme`
+- **Auto, Light, or Dark** — toggle in the sidebar's Theme switcher
+- Auto mode follows the system's `prefers-color-scheme` and updates live if the system theme changes
+- Manual selection persists across sessions via `localStorage`
 - Accent colour: warm gold/brown (`#956433`)
 
 ---
@@ -96,7 +97,7 @@ A progressive web app (PWA) music player for streaming and offline listening to 
 ## Tech Stack
 
 - **HTML / CSS / JavaScript** — no frameworks, no build tools
-- **IndexedDB** — offline song storage
+- **IndexedDB** — auto-cached and downloaded song storage for offline playback
 - **localStorage** — preferences, favorites, durations cache, playback state
 - **Service Worker** — offline support and update detection
 - **Web App Manifest** — PWA install and standalone mode
