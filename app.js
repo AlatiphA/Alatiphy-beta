@@ -797,6 +797,9 @@ async function silentCacheSong(song) {
 
     if (!response.ok) return;
 
+    // bail if user skipped away from this song while fetching
+    if (STATE.songs[STATE.currentIndex] !== song) return;
+
     const contentType =
       response.headers.get("content-type") || "";
 
@@ -849,9 +852,18 @@ function playSong() {
         navigator.mediaSession.playbackState = "playing";
       }
 
-      // silently cache current song in background
+      // silently cache current song in background,
+      // delayed so it doesn't compete with the <audio>
+      // element's own network request for the same file
       const song = STATE.songs[STATE.currentIndex];
-      if (song) silentCacheSong(song);
+      if (song) {
+        setTimeout(() => {
+          // bail if user has since skipped to a different track
+          if (STATE.songs[STATE.currentIndex] === song) {
+            silentCacheSong(song);
+          }
+        }, 5000);
+      }
     })
 
     .catch(err => {
