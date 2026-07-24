@@ -1554,11 +1554,18 @@ function getNextIndex(direction = "next") {
   const playlist = getCurrentPlaylist();
   if (!playlist.length) return null;
 
-  const currentPos = playlist.findIndex(
+  let currentPos = playlist.findIndex(
     item => item.index === STATE.currentIndex
   );
 
-  if (currentPos === -1) return null;
+  // Current song isn't part of this view's playlist
+  // (e.g. playing a song from "All Songs" then switching
+  // to Downloads/Favorites where that song doesn't appear).
+  // Treat it as "before the first song" so Next/Prev still
+  // works instead of breaking playback.
+  if (currentPos === -1) {
+    currentPos = direction === "next" ? -1 : 0;
+  }
 
   // REPEAT ONE
   if (STATE.repeat === "one") {
