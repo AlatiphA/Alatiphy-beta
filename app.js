@@ -1310,7 +1310,8 @@ async function renderDownloads() {
 
   try {
 
-    const downloads = await getAllDownloadedSongs();
+    const downloads = (await getAllDownloadedSongs())
+      .filter(item => item.isRealDownload);
 
     DOM.list.innerHTML = "";
 
@@ -1329,7 +1330,7 @@ async function renderDownloads() {
   const download =
     STATE.downloadedSongs[song.src];
 
-  if (!download) return;
+  if (!download || !download.isRealDownload) return;
 
       const div = document.createElement("div");
 
