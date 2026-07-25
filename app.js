@@ -517,7 +517,6 @@ function loadDurations() {
 }
 
 /* ===== UPDATE DURATION ===== */
-
 function updateSingleDuration(index, duration) {
 
   const el = DOM.list.querySelector(
@@ -610,7 +609,6 @@ function openDatabase() {
 }
 
 /* ===== SAVE SONG ===== */
-  
 function saveSongToDB(songData) {
 
   return new Promise((resolve, reject) => {
@@ -650,7 +648,6 @@ function saveSongToDB(songData) {
 }
 
 /* ===== GET SONGS ===== */
-  
 function getSongFromDB(id) {
 
   return new Promise((resolve, reject) => {
@@ -812,7 +809,6 @@ async function loadSong() {
   }
 }
 
-/* ===== PLAY SONG ===== */
 /* ===== SILENT BACKGROUND CACHE ===== */
 async function silentCacheSong(song) {
 
@@ -865,6 +861,7 @@ async function silentCacheSong(song) {
   }
 }
 
+/* ===== PLAY SONG ===== */
 function playSong() {
 
   DOM.audio.play()
