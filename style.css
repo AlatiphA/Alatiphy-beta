@@ -903,6 +903,8 @@ box-shadow:
   z-index: 99999;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .supporterKeyModal.open {
@@ -916,6 +918,7 @@ box-shadow:
   border-radius: 14px;
   padding: 16px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  box-sizing: border-box;
 }
 
 .supporterKeyHeader {
@@ -946,6 +949,7 @@ box-shadow:
   background: var(--bg);
   color: var(--text);
   text-transform: uppercase;
+  box-sizing: border-box;
 }
 
 #supporterKeySubmit {
@@ -958,6 +962,7 @@ box-shadow:
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 #supporterKeySubmit:active {
