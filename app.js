@@ -77,32 +77,41 @@ initTheme();
 /* =========================
    SUPPORTER KEY SYSTEM
    ─────────────────────────
-   Keys follow format: ALATIPHA-XXXX-YYYY
+   Keys follow format: ALATIPHYMUSIC-XXXX-YYYY
    where YYYY is a checksum derived from XXXX.
+   Uses its own prefix, checksum salt, and
+   localStorage key so a key (or activation)
+   in GES Pasco/PromoHub does NOT unlock this
+   app, and vice versa — same origin, but kept
+   fully independent.
    This is a soft gate, not real security —
    anyone viewing source can find the algorithm.
    It's meant to reward genuine supporters, not
    stop determined bypassing.
 ========================= */
 
+const SUPPORTER_STORAGE_KEY = "alatiphyMusic_isSupporter";
+
 function supporterChecksum(code) {
   let sum = 0;
   for (let i = 0; i < code.length; i++) {
-    sum += code.charCodeAt(i) * (i + 7);
+    // different multiplier/offset than GES Pasco
+    // so checksums (and therefore valid keys) differ
+    sum += code.charCodeAt(i) * (i + 13) + 5;
   }
   return (sum % 9973).toString(36).toUpperCase().padStart(4, "0");
 }
 
 function isValidSupporterKey(key) {
   const clean = key.trim().toUpperCase();
-  const match = clean.match(/^ALATIPHA-([A-Z0-9]{4,8})-([A-Z0-9]{4})$/);
+  const match = clean.match(/^ALATIPHYMUSIC-([A-Z0-9]{4,8})-([A-Z0-9]{4})$/);
   if (!match) return false;
   const [, code, checksum] = match;
   return supporterChecksum(code) === checksum;
 }
 
 function isSupporter() {
-  return localStorage.getItem("isSupporter") === "true";
+  return localStorage.getItem(SUPPORTER_STORAGE_KEY) === "true";
 }
 
 function applySupporterUI() {
@@ -145,7 +154,7 @@ if (supporterKeySubmit) {
   supporterKeySubmit.addEventListener("click", () => {
     const key = supporterKeyInput.value;
     if (isValidSupporterKey(key)) {
-      localStorage.setItem("isSupporter", "true");
+      localStorage.setItem(SUPPORTER_STORAGE_KEY, "true");
       supporterKeyModal.classList.remove("open");
       applySupporterUI();
     } else {
